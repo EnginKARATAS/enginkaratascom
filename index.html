@@ -95,21 +95,23 @@
             }
         }
 
-
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
         .inputEnterTask {
             width: 100%;
             border: 1px solid #333;
             border-radius: 5px;
             padding: 0.5rem;
         }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            bottom: 0;
+        }
+
     </style>
 </head>
 
@@ -159,27 +161,38 @@
                 </section>
             );
         }
-        let features = [
-            { id: 1, featureName: "create todo app" },
-            { id: 2, featureName: "heyy" }
-        ];
 
-        function FeatureList({ features }) {
-            return (
-                <div className="featureList">
-                    {
-                        features.map((feature) => (
-                            <div className="feature" key={feature.id}>
-                                <h3>{feature.featureName}</h3>
-                            </div>
-                        ))
-                    }
-                </div>)
-        }
 
-        function Features() {
+
+
+        function FeaturesComponent() {
+            let features = [
+                { id: 1, featureName: "create todo app" },
+                { id: 2, featureName: "heyy" }
+            ];
+
             let [featuresArr, setFeaturesArr] = useState(features);
             let [inputValue, setInputValue] = useState("");
+            
+
+            function FeatureList({ features }) {
+                return (
+                    <div className="featureList">
+                        {
+                            features.map((feature) => (
+                                <div className="feature" key={feature.id}>
+                                    <h3>{feature.featureName}</h3>
+                                    <button onClick={() => deleteFeature(feature.id)}>Delete</button>
+                                </div>
+                            ))
+                        }
+                    </div>)
+            }
+
+            function deleteFeature(id) {
+                setFeaturesArr(featuresArr.filter(feature => feature.id !== id))
+            }
+
             return (
                 <section className="features" id="features">
                     <div className="container">
@@ -193,8 +206,8 @@
 
         function Footer() {
             return (
-                <footer>
-                    <div className="container">
+                <footer className="footer">
+                    <div >
                         <p>&copy; 2024 Engin Karatas. All rights reserved.</p>
                     </div>
                 </footer>
@@ -206,7 +219,7 @@
                 <div>
                     <Header />
                     <Hero />
-                    <Features />
+                    <FeaturesComponent />
                     <Footer />
                 </div>
             );
