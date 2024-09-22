@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaBlog } from 'react-icons/fa';
-import './HomePage.css';
+import './Home.css';
 
 const HomePage = () => {
   return (

@@ -6,7 +6,7 @@ import FeatureComponent from "./components/FeatureComponent";
 import Footer from "./layout/Footer";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-import TodoAppPage from "./pages/TodoAppPage";
+import TodoAppPage from "./pages/TodoAppPage/TodoAppPage";
 
 function App() {
   return (

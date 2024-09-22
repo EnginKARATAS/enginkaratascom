@@ -1,40 +1,50 @@
 import { useState } from "react";
 
 export default function FeatureComponent() {
-    let features = [
-        { id: 1, featureName: "create todo app" },
-        { id: 2, featureName: "heyy" }
-    ];
+    const [tasks, setTasks] = useState([
+        { id: 1, text: "Create todo app", completed: false },
+        { id: 2, text: "Style the app", completed: false }
+    ]);
+    const [inputValue, setInputValue] = useState("");
 
-    let [featuresArr, setFeaturesArr] = useState(features);
-    let [inputValue, setInputValue] = useState("");
-    
+    const addTask = (text) => {
+        if (text.trim()) {
+            setTasks([...tasks, { id: Date.now(), text, completed: false }]);
+            setInputValue("");
+        }
+    };
 
-    function FeatureList({ features }) {
-        return (
-            <div className="featureList">
-                {
-                    features.map((feature) => (
-                        <div className="feature" key={feature.id}>
-                            <h3>{feature.featureName}</h3>
-                            <button onClick={() => deleteFeature(feature.id)}>Delete</button>
-                        </div>
-                    ))
-                }
-            </div>)
-    }
+    const deleteTask = (id) => {
+        setTasks(tasks.filter(task => task.id !== id));
+    };
 
-    function deleteFeature(id) {
-        setFeaturesArr(featuresArr.filter(feature => feature.id !== id))
-    }
+    const toggleTask = (id) => {
+        setTasks(tasks.map(task => 
+            task.id === id ? { ...task, completed: !task.completed } : task
+        ));
+    };
 
     return (
-        <section className="features" id="features">
-            <div className="container">
-                <h2>my todo app</h2>
-                <input className="inputEnterTask" type="text" placeholder="Enter your task" value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && setFeaturesArr([...featuresArr, { id: featuresArr.length + 1, featureName: inputValue }])} />
-                <FeatureList features={featuresArr} />
+        <div className="todo-app">
+            <h1>My Todo List</h1>
+            <div className="add-task">
+                <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    placeholder="Add a new task"
+                    onKeyPress={(e) => e.key === "Enter" && addTask(inputValue)}
+                />
+                <button onClick={() => addTask(inputValue)}>Add</button>
             </div>
-        </section>
+            <ul className="task-list">
+                {tasks.map((task) => (
+                    <li key={task.id} className={task.completed ? "completed" : ""}>
+                        <span onClick={() => toggleTask(task.id)}>{task.text}</span>
+                        <button onClick={() => deleteTask(task.id)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }
