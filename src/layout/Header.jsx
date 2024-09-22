@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function Header() {
     return (
         <header>
@@ -6,16 +7,16 @@ export default function Header() {
                 <nav>
                     <ul>
                         <li>
-                            <a href="#home">Home</a>
+                            <a href="/homepage">Home</a>
                         </li>
                         <li>
-                            <a href="#features">Features</a>
+                            <a href="/todo">Todo</a>
                         </li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="/features">Features</a>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="/contact">Contact</a>
                         </li>
                     </ul>
                 </nav>

@@ -1,0 +1,135 @@
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.address, .contact {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+}
+
+.contact a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #2980b9;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2980b9;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.profile, .education, .experience, .certificates, .projects {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-description, .degree, .position, .date {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+}
+
+.institution, .company, .project-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.achievements, .certificate-list, .project-details {
+    padding-left: 1.5rem;
+}
+
+.achievements li, .certificate-list li, .project-details li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        padding: 1rem;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .institution, .company, .project-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .education-item, .job, .project {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+    }
+
+    .institution, .company, .project-title {
+        grid-column: 1 / 2;
+    }
+
+    .degree, .position, .project-details {
+        grid-column: 2 / 3;
+    }
+}
