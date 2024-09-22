@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function FeaturesComponent() {
+export default function FeatureComponent() {
     let features = [
         { id: 1, featureName: "create todo app" },
         { id: 2, featureName: "heyy" }
