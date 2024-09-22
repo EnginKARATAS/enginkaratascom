@@ -77,14 +77,15 @@
             text-decoration: none;
             border-radius: 5px;
         }
- 
+
         .featureList {
             background-color: #f4f4f4;
             display: flex;
             flex-direction: column;
             gap: 1rem;
+
             .feature {
-                
+
                 margin: 0 auto;
                 background-color: pink;
                 width: 50%;
@@ -117,7 +118,7 @@
 
     <script type="text/babel" data-type="module">
         import React from "react";
-        import {useState} from "react";
+        import { useState } from "react";
         import { createRoot } from "react-dom/client";
 
         function Header() {
@@ -169,7 +170,7 @@
                     {
                         features.map((feature) => (
                             <div className="feature" key={feature.id}>
-                                    <h3>{feature.featureName}</h3>
+                                <h3>{feature.featureName}</h3>
                             </div>
                         ))
                     }
@@ -183,7 +184,7 @@
                 <section className="features" id="features">
                     <div className="container">
                         <h2>my todo app</h2>
-                        <input className="inputEnterTask" type="text" placeholder="Enter your task" value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress = {(e)=>e.key === "Enter" && setFeaturesArr([...featuresArr, {id: featuresArr.length + 1, featureName: inputValue}])} />
+                        <input className="inputEnterTask" type="text" placeholder="Enter your task" value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && setFeaturesArr([...featuresArr, { id: featuresArr.length + 1, featureName: inputValue }])} />
                         <FeatureList features={featuresArr} />
                     </div>
                 </section>
