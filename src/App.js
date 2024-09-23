@@ -7,7 +7,7 @@ import Footer from "./layout/Footer";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import TodoAppPage from "./pages/TodoAppPage/TodoAppPage";
-
+import TicTacToePage from "./pages/TicTacToePage/TicTacToePage";
 function App() {
   return (
     <div className="App">
@@ -17,6 +17,7 @@ function App() {
             <Route path="/homepage" element={<HomePage />} />
             <Route index path="/" element={<HomePage />} />
             <Route path="/todo" element={<TodoAppPage />} />
+            <Route path="/tictactoe" element={<TicTacToePage />} />
           </Routes>
           <Footer />
         </BrowserRouter>

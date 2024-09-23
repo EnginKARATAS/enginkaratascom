@@ -13,10 +13,7 @@ export default function Header() {
                             <a href="/todo">Todo</a>
                         </li>
                         <li>
-                            <a href="/features">Features</a>
-                        </li>
-                        <li>
-                            <a href="/contact">Contact</a>
+                            <a href="/tictactoe">TicTacToe</a>
                         </li>
                     </ul>
                 </nav>
