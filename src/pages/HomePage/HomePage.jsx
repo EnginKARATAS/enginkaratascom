@@ -17,8 +17,18 @@ const HomePage = () => {
       </header>
 
       <section className="profile">
+        <h2 className="section-title">My Music Profile</h2>
+        Here is The Galloping Horesmen Song made by me
+        <br />
+        <iframe width="560" height="202" src="https://www.bandlab.com/embed/?id=062d618f-f968-ee11-9937-000d3a41ec2a" allowfullscreen></iframe>
+
+      </section>
+
+      <section className="profile">
         <h2 className="section-title">Profile</h2>
+        
         <p className="profile-description">Accomplished front-end developer with over 2 years of experience in delivering high-quality, scalable web and mobile applications. Primarily focused on high-scale business apps with front-end Javascript frameworks. Recognized for leading a successful migration of Vue.js, benefiting over 300,000 users, and earning multiple awards including the Future Star Medal and Sparkling Reward. Proven ability to drive efficiency improvements, having enhanced data processing by 30%. Skilled in partnering, and collaborating with cross-functional teams on complex projects, consistently delivering creative solutions.</p>
+
       </section>
 
       <section className="education">
